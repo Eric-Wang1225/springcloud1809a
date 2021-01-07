@@ -1,0 +1,28 @@
+server:
+  port: ${PORT:8090}
+#��������Դ
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/1809anew?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 1225
+  #jpa������
+  jpa:
+    database: mysql
+    show-sql: true #չʾSQL
+    hibernate:
+      ddl-auto: update #���±�ṹ
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect #mysql���ݿ�̶�����
+
+  thymeleaf:
+    mode: HTML5
+    encoding: utf-8
+    cache: false
+  application:
+    name: springcloud-order
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
